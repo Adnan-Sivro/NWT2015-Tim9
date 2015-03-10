@@ -1,7 +1,7 @@
 # NWT2015-Tim9
 Projektni zadatak Tima 9 na predmetu NWT
 
-[Trello Board](https://trello.com/b/FaW62kCh/hotel-management-system)
+[Trello Board](https://trello.com/b/KcQsJjs6/nwt-tim9)
 
 
 
