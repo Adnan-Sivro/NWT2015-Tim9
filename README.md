@@ -13,3 +13,7 @@ Projektni zadatak Tima 9 na predmetu NWT
 
 * [Adnan Sivro](https://github.com/Adnan-Sivro)
 
+
+
+
+_Opis sistem možete pogledati na našoj [wiki stranici](https://github.com/Adnan-Sivro/NWT2015-Tim9/wiki)_
