@@ -31,3 +31,17 @@
 .idea/libraries/Maven__com_sun_xml_bind_jaxb_impl_2_2_3_1.xml
 .idea/libraries/Maven__com_sun_jersey_jersey_servlet_1_17_1.xml
 .idea/encodings.xml
+target/classes/dbclasses/FoodMenu.class
+target/classes/dbclasses/FoodOrder.class
+target/classes/dbclasses/Image.class
+target/classes/dbclasses/Keycard.class
+target/classes/dbclasses/Location.class
+target/classes/dbclasses/Resource.class
+*.class
+target/Hotel.war
+target/Hotel/index.jsp
+*.jar
+target/Hotel/WEB-INF/web.xml
+target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+target/maven-archiver/pom.properties
