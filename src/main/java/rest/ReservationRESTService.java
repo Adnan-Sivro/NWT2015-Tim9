@@ -3,12 +3,12 @@ package rest;
 import dbclasses.Reservation;
 import dbclasses.User;
 import services.ReservationService;
+import services.UserService;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import java.net.URISyntaxException;
 import java.sql.Timestamp;
 
 /**
@@ -16,29 +16,29 @@ import java.sql.Timestamp;
  */
 @Path("/reservations")
 public class ReservationRESTService {
-    /*@GET
+
+    @GET
+    @Path("/getReservation")
     @Produces(MediaType.APPLICATION_JSON)
     public Reservation updateReservationInJSON() {
         ReservationService reservationService = new ReservationService();
         return reservationService.updateReservation(1);
-    }*/
-
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public Reservation createReservation(@QueryParam("idreservation") int idreservation,
-                    @QueryParam("from_date") Timestamp from_date,
-                    @QueryParam("to_date") Timestamp to_date,
-                    @QueryParam("price") float price,
-                    @QueryParam("status") byte status,
-                    @QueryParam("type") Byte type) {
-        Reservation reservation = new Reservation();
-        reservation.setIdreservation(idreservation);
-        reservation.setFromDate(from_date);
-        reservation.setToDate(to_date);
-        reservation.setPrice(price);
-        reservation.setStatus(status);
-        reservation.setType(type);
-        return reservation;
     }
+
+    @POST
+    @Path("/createReservation")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response createReservationInJSON(Reservation reservation) throws URISyntaxException {
+
+        return Response.status(200).entity("Reservation with ID: " + reservation.getIdreservation() + " is created successfully").build();
+    }
+
+    @DELETE
+    @Path("/deleteReservation")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response deleteUserInJSON(@QueryParam("idreservation") int idreservation) throws URISyntaxException {
+        return Response.status(200).entity("Reservation with ID: " + idreservation + " is deleted successfully").build();
+    }
+
 
 }

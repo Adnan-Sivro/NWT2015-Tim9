@@ -3,6 +3,10 @@ package rest;
 import dbclasses.User;
 import services.UserService;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContextType;
+import javax.swing.text.html.HTML;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -17,44 +21,30 @@ import java.sql.Timestamp;
 @Path("/users")
 
 public class UserRESTService {
-/*
+
     @GET
+    @Path("/getUser")
     @Produces(MediaType.APPLICATION_JSON)
     public User updateUserInJSON() {
         UserService userService = new UserService();
         return userService.updateUser(1);
-    }*/
-/*
+    }
+
+    @POST
+    @Path("/createUser")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response createUserInJSON(User user) throws URISyntaxException{
+
+        return Response.status(200).entity("User with ID: " + user.getIduser() + " is created successfully").build();
+    }
+
     @DELETE
-    @Path("/delete/{iduser}")
+    @Path("/deleteUser")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response deleteUserInJSON(@PathParam("iduser") int iduser) throws URISyntaxException {
-        return Response.status(200).entity("User with " + iduser + " is deleted successfully").build();
+    public Response deleteUserInJSON(@QueryParam("iduser") int iduser) throws URISyntaxException {
+        return Response.status(200).entity("User with ID: " + iduser + " is deleted successfully").build();
     }
-*/
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public User Add(@QueryParam("iduser") int iduser,
-                    @QueryParam("username") String username,
-                    @QueryParam("password") String password,
-                    @QueryParam("email") String email,
-                    @QueryParam("user_type") byte user_type,
-                    @QueryParam("created_date") Timestamp created_date,
-                    @QueryParam("activated_date") Timestamp activated_date,
-                    @QueryParam("deactivated_date") Timestamp deactivated_date,
-                    @QueryParam("confirmation_key") String confirmation_key) {
-        User user = new User();
-        user.setIduser(iduser);
-        user.setUsername(username);
-        user.setPassword(password);
-        user.setEmail(email);
-        user.setUserType(user_type);
-        user.setCreatedDate(created_date);
-        user.setActivatedDate(activated_date);
-        user.setDeactivatedDate(deactivated_date);
-        user.setConfirmationKey(confirmation_key);
-        return user;
-    }
+
 
 }
 
