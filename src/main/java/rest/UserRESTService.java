@@ -34,8 +34,18 @@ public class UserRESTService {
     @Path("/createUser")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response createUserInJSON(User user) throws URISyntaxException{
+        User user1 = new User();
+        user1.setUsername(user.getUsername());
+        user1.setUserType(user.getUserType());
+        user1.setEmail(user.getEmail());
+        user1.setConfirmationKey(user.getConfirmationKey());
+        user1.setDeactivatedDate(user.getDeactivatedDate());
+        user1.setActivatedDate(user.getActivatedDate());
+        user1.setPassword(user.getPassword());
+        user1.setCreatedDate(user.getCreatedDate());
+        user1.setIduser(user.getIduser());
 
-        return Response.status(200).entity("User with ID: " + user.getIduser() + " is created successfully").build();
+        return Response.status(200).entity("User with ID: " + user1.getIduser() + " is created successfully").build();
     }
 
     @DELETE

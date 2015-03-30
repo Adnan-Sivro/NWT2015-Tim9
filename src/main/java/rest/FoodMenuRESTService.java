@@ -30,8 +30,15 @@ public class FoodMenuRESTService {
     @Path("/createMenu")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response createMenuInJSON(FoodMenu foodMenu) throws URISyntaxException {
+        FoodMenu foodMenu1= new FoodMenu();
+        foodMenu1.setIdfood(foodMenu.getIdfood());
+        foodMenu1.setPrice(foodMenu.getPrice());
+        foodMenu1.setAmountAvailable(foodMenu.getAmountAvailable());
+        foodMenu1.setDescription(foodMenu.getDescription());
+        foodMenu1.setName(foodMenu.getName());
 
-        return Response.status(200).entity("User with ID: " + foodMenu.getIdfood() + " is created successfully").build();
+
+        return Response.status(200).entity("User with ID: " + foodMenu1.getIdfood() + " is created successfully").build();
     }
 
     @DELETE

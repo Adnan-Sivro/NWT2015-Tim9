@@ -29,8 +29,16 @@ public class ReservationRESTService {
     @Path("/createReservation")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response createReservationInJSON(Reservation reservation) throws URISyntaxException {
+        Reservation reservation1 = new Reservation();
+        reservation1.setType(reservation.getType());
+        reservation1.setStatus(reservation.getStatus());
+        reservation1.setIdreservation(reservation.getIdreservation());
+        reservation1.setPrice(reservation.getPrice());
+        reservation1.setToDate(reservation.getToDate());
+        reservation1.setFromDate(reservation.getFromDate());
+        reservation1.setUserIduser(reservation.getUserIduser());
 
-        return Response.status(200).entity("Reservation with ID: " + reservation.getIdreservation() + " is created successfully").build();
+        return Response.status(200).entity("Reservation with ID: " + reservation1.getIdreservation() + " is created successfully").build();
     }
 
     @DELETE
