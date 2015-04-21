@@ -1,6 +1,7 @@
 package rest;
 
 import dbclasses.User;
+import org.hibernate.Session;
 import services.UserService;
 
 import javax.persistence.EntityManager;
@@ -46,6 +47,7 @@ public class UserRESTService {
         user1.setIduser(user.getIduser());
 
         return Response.status(200).entity("User with ID: " + user1.getIduser() + " is created successfully").build();
+
     }
 
     @DELETE

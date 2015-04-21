@@ -37,7 +37,6 @@ public class ReservationRESTService {
         reservation1.setToDate(reservation.getToDate());
         reservation1.setFromDate(reservation.getFromDate());
         reservation1.setUserIduser(reservation.getUserIduser());
-
         return Response.status(200).entity("Reservation with ID: " + reservation1.getIdreservation() + " is created successfully").build();
     }
 
