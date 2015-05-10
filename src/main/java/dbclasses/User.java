@@ -1,15 +1,16 @@
 package dbclasses;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
  * Created by XenoGearX on 23.3.2015.
  */
 @Entity
+@NamedQueries({
+        @NamedQuery (name = User.FIND_ALL, query = "SELECT u FROM User u"),
+        @NamedQuery (name = User.FIND_BY_USERNAME, query = "SELECT u FROM User u WHERE u.username = :username")
+})
 public class User {
     private int iduser;
     private String username;
@@ -20,6 +21,8 @@ public class User {
     private Timestamp activatedDate;
     private Timestamp deactivatedDate;
     private String confirmationKey;
+    public static final String FIND_ALL = "User.findAll";
+    public static final String FIND_BY_USERNAME = "User.findByUsername";
 
     @Id
     @Column(name = "iduser", nullable = false, insertable = true, updatable = true)
