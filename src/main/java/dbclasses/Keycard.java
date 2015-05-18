@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 /**
- * Created by XenoGearX on 23.3.2015.
+ * Created by Enes on 18.5.2015..
  */
 @Entity
 public class Keycard {
@@ -15,7 +15,7 @@ public class Keycard {
     private String accessIdentifier;
 
     @Id
-    @Column(name = "idkeycard", nullable = false, insertable = true, updatable = true)
+    @Column(name = "idkeycard")
     public int getIdkeycard() {
         return idkeycard;
     }
@@ -25,7 +25,7 @@ public class Keycard {
     }
 
     @Basic
-    @Column(name = "number", nullable = false, insertable = true, updatable = true, length = 10)
+    @Column(name = "number")
     public String getNumber() {
         return number;
     }
@@ -35,7 +35,7 @@ public class Keycard {
     }
 
     @Basic
-    @Column(name = "access_identifier", nullable = false, insertable = true, updatable = true, length = 10)
+    @Column(name = "access_identifier")
     public String getAccessIdentifier() {
         return accessIdentifier;
     }

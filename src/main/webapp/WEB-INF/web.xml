@@ -4,28 +4,4 @@
              http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          version="3.0">
     <display-name>Hotel Web Application</display-name>
-    <servlet>
-        <servlet-name>jersey-serlvet</servlet-name>
-
-        <servlet-class>
-            com.sun.jersey.spi.container.servlet.ServletContainer
-        </servlet-class>
-
-        <init-param>
-            <param-name>com.sun.jer</param-name>
-            <param-value>rest</param-value>
-        </init-param>
-
-        <init-param>
-            <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
-            <param-value>true</param-value>
-        </init-param>
-
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>jersey-serlvet</servlet-name>
-        <url-pattern>/rest/*</url-pattern>
-    </servlet-mapping>
 </web-app>

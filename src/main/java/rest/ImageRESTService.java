@@ -4,7 +4,6 @@ import dbclasses.Image;
 import dbclasses.ResourceType;
 import dbclasses.User;
 import services.ImageService;
-import services.UserService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

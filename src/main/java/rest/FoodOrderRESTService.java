@@ -8,8 +8,6 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.net.URISyntaxException;
-import java.sql.Timestamp;
-import java.util.List;
 
 /**
  * Created by Enes on 30.3.2015..

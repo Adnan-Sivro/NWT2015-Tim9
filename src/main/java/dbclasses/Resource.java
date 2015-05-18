@@ -3,12 +3,12 @@ package dbclasses;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Arrays;
-import java.util.List;
 
 /**
- * Created by XenoGearX on 23.3.2015.
+ * Created by Enes on 18.5.2015..
  */
 @Entity
+@IdClass(ResourcePK.class)
 public class Resource {
     private int idresource;
     private String name;
@@ -16,12 +16,12 @@ public class Resource {
     private byte[] available;
     private String availabilityStatus;
     private Timestamp availabilityDate;
-    private Keycard keycardIdkeycard;
-    private List<ResourceType> resourceTypeIdresourceType;
-    private List<User> userIduser;
+    private int resourceTypeIdresourceType;
+    private int keycardIdkeycard;
+    private int userIduser;
 
     @Id
-    @Column(name = "idresource", nullable = false, insertable = true, updatable = true)
+    @Column(name = "idresource")
     public int getIdresource() {
         return idresource;
     }
@@ -31,7 +31,7 @@ public class Resource {
     }
 
     @Basic
-    @Column(name = "name", nullable = false, insertable = true, updatable = true, length = 45)
+    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -41,7 +41,7 @@ public class Resource {
     }
 
     @Basic
-    @Column(name = "occupied", nullable = false, insertable = true, updatable = true)
+    @Column(name = "occupied")
     public byte[] getOccupied() {
         return occupied;
     }
@@ -51,7 +51,7 @@ public class Resource {
     }
 
     @Basic
-    @Column(name = "available", nullable = false, insertable = true, updatable = true)
+    @Column(name = "available")
     public byte[] getAvailable() {
         return available;
     }
@@ -61,7 +61,7 @@ public class Resource {
     }
 
     @Basic
-    @Column(name = "availability_status", nullable = true, insertable = true, updatable = true, length = 64)
+    @Column(name = "availability_status")
     public String getAvailabilityStatus() {
         return availabilityStatus;
     }
@@ -71,13 +71,43 @@ public class Resource {
     }
 
     @Basic
-    @Column(name = "availability_date", nullable = true, insertable = true, updatable = true)
+    @Column(name = "availability_date")
     public Timestamp getAvailabilityDate() {
         return availabilityDate;
     }
 
     public void setAvailabilityDate(Timestamp availabilityDate) {
         this.availabilityDate = availabilityDate;
+    }
+
+    @Id
+    @Column(name = "resource_type_idresource_type")
+    public int getResourceTypeIdresourceType() {
+        return resourceTypeIdresourceType;
+    }
+
+    public void setResourceTypeIdresourceType(int resourceTypeIdresourceType) {
+        this.resourceTypeIdresourceType = resourceTypeIdresourceType;
+    }
+
+    @Id
+    @Column(name = "keycard_idkeycard")
+    public int getKeycardIdkeycard() {
+        return keycardIdkeycard;
+    }
+
+    public void setKeycardIdkeycard(int keycardIdkeycard) {
+        this.keycardIdkeycard = keycardIdkeycard;
+    }
+
+    @Id
+    @Column(name = "user_iduser")
+    public int getUserIduser() {
+        return userIduser;
+    }
+
+    public void setUserIduser(int userIduser) {
+        this.userIduser = userIduser;
     }
 
     @Override
@@ -88,6 +118,9 @@ public class Resource {
         Resource resource = (Resource) o;
 
         if (idresource != resource.idresource) return false;
+        if (keycardIdkeycard != resource.keycardIdkeycard) return false;
+        if (resourceTypeIdresourceType != resource.resourceTypeIdresourceType) return false;
+        if (userIduser != resource.userIduser) return false;
         if (availabilityDate != null ? !availabilityDate.equals(resource.availabilityDate) : resource.availabilityDate != null)
             return false;
         if (availabilityStatus != null ? !availabilityStatus.equals(resource.availabilityStatus) : resource.availabilityStatus != null)
@@ -107,34 +140,9 @@ public class Resource {
         result = 31 * result + (available != null ? Arrays.hashCode(available) : 0);
         result = 31 * result + (availabilityStatus != null ? availabilityStatus.hashCode() : 0);
         result = 31 * result + (availabilityDate != null ? availabilityDate.hashCode() : 0);
+        result = 31 * result + resourceTypeIdresourceType;
+        result = 31 * result + keycardIdkeycard;
+        result = 31 * result + userIduser;
         return result;
-    }
-
-    @OneToOne
-    @JoinColumn(name = "keycard_idkeycard", referencedColumnName = "idkeycard", nullable = false)
-    public Keycard getKeycardIdkeycard() {
-        return keycardIdkeycard;
-    }
-
-    public void setKeycardIdkeycard(Keycard keycardIdkeycard) {
-        this.keycardIdkeycard = keycardIdkeycard;
-    }
-
-    @OneToMany
-    public List<ResourceType> getResourceTypeIdresourceType() {
-        return resourceTypeIdresourceType;
-    }
-
-    public void setResourceTypeIdresourceType(List<ResourceType> resourceTypeIdresourceType) {
-        this.resourceTypeIdresourceType = resourceTypeIdresourceType;
-    }
-
-    @OneToMany
-    public List<User> getUserIduser() {
-        return userIduser;
-    }
-
-    public void setUserIduser(List<User> userIduser) {
-        this.userIduser = userIduser;
     }
 }

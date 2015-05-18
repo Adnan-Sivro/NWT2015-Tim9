@@ -3,9 +3,6 @@ package services;
 import com.sun.jersey.spi.resource.Singleton;
 import dbclasses.User;
 
-import javax.ws.rs.QueryParam;
-import java.sql.Timestamp;
-
 /**
  * Created by XenoGearX on 23.3.2015.
  */

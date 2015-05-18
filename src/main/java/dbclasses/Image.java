@@ -1,21 +1,21 @@
 package dbclasses;
 
 import javax.persistence.*;
-import java.util.List;
 
 /**
- * Created by XenoGearX on 23.3.2015.
+ * Created by Enes on 18.5.2015..
  */
 @Entity
+@IdClass(ImagePK.class)
 public class Image {
     private int idimage;
     private String name;
     private String location;
     private String description;
-    private List<ResourceType> resourceTypeIdresourceType;
+    private int resourceTypeIdresourceType;
 
     @Id
-    @Column(name = "idimage", nullable = false, insertable = true, updatable = true)
+    @Column(name = "idimage")
     public int getIdimage() {
         return idimage;
     }
@@ -25,7 +25,7 @@ public class Image {
     }
 
     @Basic
-    @Column(name = "name", nullable = false, insertable = true, updatable = true, length = 45)
+    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -35,7 +35,7 @@ public class Image {
     }
 
     @Basic
-    @Column(name = "location", nullable = false, insertable = true, updatable = true, length = 100)
+    @Column(name = "location")
     public String getLocation() {
         return location;
     }
@@ -45,13 +45,23 @@ public class Image {
     }
 
     @Basic
-    @Column(name = "description", nullable = true, insertable = true, updatable = true, length = 45)
+    @Column(name = "description")
     public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Id
+    @Column(name = "resource_type_idresource_type")
+    public int getResourceTypeIdresourceType() {
+        return resourceTypeIdresourceType;
+    }
+
+    public void setResourceTypeIdresourceType(int resourceTypeIdresourceType) {
+        this.resourceTypeIdresourceType = resourceTypeIdresourceType;
     }
 
     @Override
@@ -62,6 +72,7 @@ public class Image {
         Image image = (Image) o;
 
         if (idimage != image.idimage) return false;
+        if (resourceTypeIdresourceType != image.resourceTypeIdresourceType) return false;
         if (description != null ? !description.equals(image.description) : image.description != null) return false;
         if (location != null ? !location.equals(image.location) : image.location != null) return false;
         if (name != null ? !name.equals(image.name) : image.name != null) return false;
@@ -75,15 +86,7 @@ public class Image {
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (location != null ? location.hashCode() : 0);
         result = 31 * result + (description != null ? description.hashCode() : 0);
+        result = 31 * result + resourceTypeIdresourceType;
         return result;
-    }
-
-    @OneToMany
-    public List<ResourceType> getResourceTypeIdresourceType() {
-        return resourceTypeIdresourceType;
-    }
-
-    public void setResourceTypeIdresourceType(List<ResourceType> resourceTypeIdresourceType) {
-        this.resourceTypeIdresourceType = resourceTypeIdresourceType;
     }
 }

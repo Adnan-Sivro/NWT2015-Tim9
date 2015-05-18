@@ -3,7 +3,7 @@ package dbclasses;
 import javax.persistence.*;
 
 /**
- * Created by XenoGearX on 23.3.2015.
+ * Created by Enes on 18.5.2015..
  */
 @Entity
 @Table(name = "food_menu", schema = "", catalog = "hotel")
@@ -15,7 +15,7 @@ public class FoodMenu {
     private int amountAvailable;
 
     @Id
-    @Column(name = "idfood", nullable = false, insertable = true, updatable = true)
+    @Column(name = "idfood")
     public int getIdfood() {
         return idfood;
     }
@@ -25,7 +25,7 @@ public class FoodMenu {
     }
 
     @Basic
-    @Column(name = "name", nullable = false, insertable = true, updatable = true, length = 30)
+    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -35,7 +35,7 @@ public class FoodMenu {
     }
 
     @Basic
-    @Column(name = "price", nullable = false, insertable = true, updatable = true, precision = 0)
+    @Column(name = "price")
     public float getPrice() {
         return price;
     }
@@ -45,7 +45,7 @@ public class FoodMenu {
     }
 
     @Basic
-    @Column(name = "description", nullable = true, insertable = true, updatable = true, length = 45)
+    @Column(name = "description")
     public String getDescription() {
         return description;
     }
@@ -55,7 +55,7 @@ public class FoodMenu {
     }
 
     @Basic
-    @Column(name = "amount_available", nullable = false, insertable = true, updatable = true)
+    @Column(name = "amount_available")
     public int getAmountAvailable() {
         return amountAvailable;
     }

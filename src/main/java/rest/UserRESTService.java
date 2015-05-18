@@ -1,18 +1,12 @@
 package rest;
 
 import dbclasses.User;
-import org.hibernate.Session;
 import services.UserService;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceContextType;
-import javax.swing.text.html.HTML;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.net.URISyntaxException;
-import java.sql.Timestamp;
 
 
 /**

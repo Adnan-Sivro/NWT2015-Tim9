@@ -4,14 +4,18 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by XenoGearX on 23.3.2015.
+ * Created by Enes on 18.5.2015..
  */
 @Entity
-@NamedQueries({
+@Table (name = "user")
+@NamedQueries ({
         @NamedQuery (name = User.FIND_ALL, query = "SELECT u FROM User u"),
-        @NamedQuery (name = User.FIND_BY_USERNAME, query = "SELECT u FROM User u WHERE u.username = :username")
+        @NamedQuery(name = User.FIND_BY_USERNAME, query = "SELECT u FROM User u WHERE u.username = :username")
 })
 public class User {
+    public static final String FIND_ALL = "User.findAll";
+    public static final String FIND_BY_USERNAME = "User.findByUsername";
+
     private int iduser;
     private String username;
     private String password;
@@ -21,11 +25,9 @@ public class User {
     private Timestamp activatedDate;
     private Timestamp deactivatedDate;
     private String confirmationKey;
-    public static final String FIND_ALL = "User.findAll";
-    public static final String FIND_BY_USERNAME = "User.findByUsername";
 
     @Id
-    @Column(name = "iduser", nullable = false, insertable = true, updatable = true)
+    @Column(name = "iduser")
     public int getIduser() {
         return iduser;
     }
@@ -35,7 +37,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "username", nullable = false, insertable = true, updatable = true, length = 20)
+    @Column(name = "username")
     public String getUsername() {
         return username;
     }
@@ -45,7 +47,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "password", nullable = false, insertable = true, updatable = true, length = 40)
+    @Column(name = "password")
     public String getPassword() {
         return password;
     }
@@ -55,7 +57,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "email", nullable = false, insertable = true, updatable = true, length = 45)
+    @Column(name = "email")
     public String getEmail() {
         return email;
     }
@@ -65,7 +67,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "user_type", nullable = false, insertable = true, updatable = true)
+    @Column(name = "user_type")
     public byte getUserType() {
         return userType;
     }
@@ -75,7 +77,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "created_date", nullable = false, insertable = true, updatable = true)
+    @Column(name = "created_date")
     public Timestamp getCreatedDate() {
         return createdDate;
     }
@@ -85,7 +87,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "activated_date", nullable = true, insertable = true, updatable = true)
+    @Column(name = "activated_date")
     public Timestamp getActivatedDate() {
         return activatedDate;
     }
@@ -95,7 +97,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "deactivated_date", nullable = true, insertable = true, updatable = true)
+    @Column(name = "deactivated_date")
     public Timestamp getDeactivatedDate() {
         return deactivatedDate;
     }
@@ -105,7 +107,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "confirmation_key", nullable = false, insertable = true, updatable = true, length = 40)
+    @Column(name = "confirmation_key")
     public String getConfirmationKey() {
         return confirmationKey;
     }

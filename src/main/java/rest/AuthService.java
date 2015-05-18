@@ -1,4 +1,4 @@
-package auth;
+package rest;
 
 /**
  * Created by Adnan on 9.5.2015..
@@ -6,6 +6,9 @@ package auth;
 
 
 
+        import auth.AuthParameter;
+        import auth.AuthResponseObject;
+        import auth.ResponseMessages;
         import dbclasses.User;
         import facade.EntityFacade;
 
@@ -16,7 +19,6 @@ package auth;
         import javax.ws.rs.core.MediaType;
         import javax.ws.rs.core.Response;
         import javax.ws.rs.core.UriInfo;
-        import java.util.ResourceBundle;
 
 @Path("login")
 @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
@@ -31,7 +33,7 @@ public class AuthService {
 
     @POST
     public Response login(AuthParameter authParameter) {
-        ResourceBundle resourceBundle = ResourceBundle.getBundle("NWTBundle");
+        //ResourceBundle resourceBundle = ResourceBundle.getBundle("NWTBundle");
         AuthResponseObject auth = new AuthResponseObject();
 
 
@@ -42,8 +44,8 @@ public class AuthService {
             {
                 return ResponseMessages.INVALID_LOGIN.getResponse();
             }
-            //999999999L trajanje tokena u minutama
-            return Response.ok(auth).build();
+
+            return ResponseMessages.INVALID_USERNAME.getResponse();
 
 
 

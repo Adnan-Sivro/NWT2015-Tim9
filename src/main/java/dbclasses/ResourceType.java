@@ -3,7 +3,7 @@ package dbclasses;
 import javax.persistence.*;
 
 /**
- * Created by XenoGearX on 23.3.2015.
+ * Created by Enes on 18.5.2015..
  */
 @Entity
 @Table(name = "resource_type", schema = "", catalog = "hotel")
@@ -15,7 +15,7 @@ public class ResourceType {
     private int qunatity;
 
     @Id
-    @Column(name = "idresource_type", nullable = false, insertable = true, updatable = true)
+    @Column(name = "idresource_type")
     public int getIdresourceType() {
         return idresourceType;
     }
@@ -25,7 +25,7 @@ public class ResourceType {
     }
 
     @Basic
-    @Column(name = "name", nullable = false, insertable = true, updatable = true, length = 45)
+    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -35,7 +35,7 @@ public class ResourceType {
     }
 
     @Basic
-    @Column(name = "description", nullable = false, insertable = true, updatable = true, length = 256)
+    @Column(name = "description")
     public String getDescription() {
         return description;
     }
@@ -45,7 +45,7 @@ public class ResourceType {
     }
 
     @Basic
-    @Column(name = "price", nullable = false, insertable = true, updatable = true, precision = 0)
+    @Column(name = "price")
     public float getPrice() {
         return price;
     }
@@ -55,7 +55,7 @@ public class ResourceType {
     }
 
     @Basic
-    @Column(name = "qunatity", nullable = false, insertable = true, updatable = true)
+    @Column(name = "qunatity")
     public int getQunatity() {
         return qunatity;
     }

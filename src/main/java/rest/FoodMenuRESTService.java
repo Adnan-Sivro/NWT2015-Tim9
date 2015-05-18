@@ -4,7 +4,6 @@ package rest;
 import dbclasses.FoodMenu;
 import dbclasses.User;
 import services.FoodMenuService;
-import services.UserService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

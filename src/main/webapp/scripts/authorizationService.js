@@ -3,7 +3,7 @@
  */
 app.service('authService', function ($http, $rootScope, $cookieStore,$location) {
     var authService = {};
-    var apiURL = "/auth";
+    var apiURL = "/Hotel/rest";
 
     var _setAuthorization = function (userProfile) {
         $rootScope.user=userProfile;

@@ -3,13 +3,11 @@ package rest;
 import dbclasses.Reservation;
 import dbclasses.User;
 import services.ReservationService;
-import services.UserService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.net.URISyntaxException;
-import java.sql.Timestamp;
 
 /**
  * Created by Adnan on 25.3.2015..

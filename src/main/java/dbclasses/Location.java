@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 /**
- * Created by XenoGearX on 23.3.2015.
+ * Created by Enes on 18.5.2015..
  */
 @Entity
 public class Location {
@@ -16,7 +16,7 @@ public class Location {
     private float longitude;
 
     @Id
-    @Column(name = "idlocation", nullable = false, insertable = true, updatable = true)
+    @Column(name = "idlocation")
     public int getIdlocation() {
         return idlocation;
     }
@@ -26,7 +26,7 @@ public class Location {
     }
 
     @Basic
-    @Column(name = "address", nullable = false, insertable = true, updatable = true, length = 45)
+    @Column(name = "address")
     public String getAddress() {
         return address;
     }
@@ -36,7 +36,7 @@ public class Location {
     }
 
     @Basic
-    @Column(name = "latitude", nullable = false, insertable = true, updatable = true, precision = 0)
+    @Column(name = "latitude")
     public float getLatitude() {
         return latitude;
     }
@@ -46,7 +46,7 @@ public class Location {
     }
 
     @Basic
-    @Column(name = "longitude", nullable = false, insertable = true, updatable = true, precision = 0)
+    @Column(name = "longitude")
     public float getLongitude() {
         return longitude;
     }
