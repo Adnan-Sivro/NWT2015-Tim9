@@ -10,6 +10,8 @@ app.factory('myHttpInterceptor', function ($q, $rootScope) {
         },
         responseError: function (response) {
             alert("GreskaInterceptor");
+            alert(response);
+
             $rootScope.setDangerMessage(response.data.code);
             return $q.reject(response);
         }
