@@ -1,15 +1,13 @@
-package dbclasses;
-
 import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by Adnan on 20.5.2015..
+ * Created by Adnan on 19.5.2015..
  */
 @Entity
 @Table(name = "food_order", schema = "", catalog = "hotel")
-@IdClass(FoodOrderPK.class)
-public class FoodOrder {
+@IdClass(FoodOrderEnPK.class)
+public class FoodOrderEn {
     private int idfoodOrder;
     private String orderName;
     private Timestamp oderDate;
@@ -93,15 +91,15 @@ public class FoodOrder {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        FoodOrder foodOrder = (FoodOrder) o;
+        FoodOrderEn that = (FoodOrderEn) o;
 
-        if (idfoodOrder != foodOrder.idfoodOrder) return false;
-        if (amount != foodOrder.amount) return false;
-        if (Float.compare(foodOrder.orderPrice, orderPrice) != 0) return false;
-        if (userIduser != foodOrder.userIduser) return false;
-        if (foodMenuIdfood != foodOrder.foodMenuIdfood) return false;
-        if (orderName != null ? !orderName.equals(foodOrder.orderName) : foodOrder.orderName != null) return false;
-        if (oderDate != null ? !oderDate.equals(foodOrder.oderDate) : foodOrder.oderDate != null) return false;
+        if (idfoodOrder != that.idfoodOrder) return false;
+        if (amount != that.amount) return false;
+        if (Float.compare(that.orderPrice, orderPrice) != 0) return false;
+        if (userIduser != that.userIduser) return false;
+        if (foodMenuIdfood != that.foodMenuIdfood) return false;
+        if (orderName != null ? !orderName.equals(that.orderName) : that.orderName != null) return false;
+        if (oderDate != null ? !oderDate.equals(that.oderDate) : that.oderDate != null) return false;
 
         return true;
     }

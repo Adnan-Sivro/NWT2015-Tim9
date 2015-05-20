@@ -2,7 +2,6 @@ package rest;
 
 
 import dbclasses.FoodMenu;
-import dbclasses.User;
 import services.FoodMenuService;
 
 import javax.ws.rs.*;

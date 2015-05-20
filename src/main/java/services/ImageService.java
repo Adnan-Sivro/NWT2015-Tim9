@@ -2,7 +2,6 @@ package services;
 
 import com.sun.jersey.spi.resource.Singleton;
 import dbclasses.Image;
-import dbclasses.User;
 
 /**
  * Created by Enes on 30.3.2015..

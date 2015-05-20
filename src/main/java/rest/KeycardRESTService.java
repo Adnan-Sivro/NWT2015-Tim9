@@ -1,7 +1,6 @@
 package rest;
 
 import dbclasses.Keycard;
-import dbclasses.User;
 import services.KeycardService;
 
 import javax.ws.rs.*;

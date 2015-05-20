@@ -1,4 +1,6 @@
-package auth;
+package auth.entities;
+
+import auth.entities.ResponseMessage;
 
 import javax.ws.rs.core.Response;
 

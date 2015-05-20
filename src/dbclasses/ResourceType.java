@@ -1,13 +1,11 @@
-package dbclasses;
-
 import javax.persistence.*;
 
 /**
- * Created by Adnan on 20.5.2015..
+ * Created by Adnan on 19.5.2015..
  */
 @Entity
 @Table(name = "resource_type", schema = "", catalog = "hotel")
-public class ResourceType {
+public class ResourceTypeEn {
     private int idresourceType;
     private String name;
     private String description;
@@ -69,7 +67,7 @@ public class ResourceType {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ResourceType that = (ResourceType) o;
+        ResourceTypeEn that = (ResourceTypeEn) o;
 
         if (idresourceType != that.idresourceType) return false;
         if (Float.compare(that.price, price) != 0) return false;

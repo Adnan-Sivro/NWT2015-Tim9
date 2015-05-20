@@ -5,7 +5,7 @@ import javax.persistence.Id;
 import java.io.Serializable;
 
 /**
- * Created by Enes on 18.5.2015..
+ * Created by Adnan on 20.5.2015..
  */
 public class FoodOrderPK implements Serializable {
     private int idfoodOrder;
@@ -49,9 +49,9 @@ public class FoodOrderPK implements Serializable {
 
         FoodOrderPK that = (FoodOrderPK) o;
 
-        if (foodMenuIdfood != that.foodMenuIdfood) return false;
         if (idfoodOrder != that.idfoodOrder) return false;
         if (userIduser != that.userIduser) return false;
+        if (foodMenuIdfood != that.foodMenuIdfood) return false;
 
         return true;
     }

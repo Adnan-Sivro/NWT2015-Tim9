@@ -1,13 +1,11 @@
-package dbclasses;
-
 import javax.persistence.*;
 
 /**
- * Created by Adnan on 20.5.2015..
+ * Created by Adnan on 19.5.2015..
  */
 @Entity
 @Table(name = "food_menu", schema = "", catalog = "hotel")
-public class FoodMenu {
+public class FoodMenuEn {
     private int idfood;
     private String name;
     private float price;
@@ -69,14 +67,13 @@ public class FoodMenu {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        FoodMenu foodMenu = (FoodMenu) o;
+        FoodMenuEn that = (FoodMenuEn) o;
 
-        if (idfood != foodMenu.idfood) return false;
-        if (Float.compare(foodMenu.price, price) != 0) return false;
-        if (amountAvailable != foodMenu.amountAvailable) return false;
-        if (name != null ? !name.equals(foodMenu.name) : foodMenu.name != null) return false;
-        if (description != null ? !description.equals(foodMenu.description) : foodMenu.description != null)
-            return false;
+        if (idfood != that.idfood) return false;
+        if (Float.compare(that.price, price) != 0) return false;
+        if (amountAvailable != that.amountAvailable) return false;
+        if (name != null ? !name.equals(that.name) : that.name != null) return false;
+        if (description != null ? !description.equals(that.description) : that.description != null) return false;
 
         return true;
     }

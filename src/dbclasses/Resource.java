@@ -1,15 +1,14 @@
-package dbclasses;
-
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Arrays;
 
 /**
- * Created by Adnan on 20.5.2015..
+ * Created by Adnan on 19.5.2015..
  */
 @Entity
-@IdClass(ResourcePK.class)
-public class Resource {
+@Table(name = "resource", schema = "", catalog = "hotel")
+@IdClass(ResourceEnPK.class)
+public class ResourceEn {
     private int idresource;
     private String name;
     private byte[] occupied;
@@ -115,18 +114,18 @@ public class Resource {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Resource resource = (Resource) o;
+        ResourceEn that = (ResourceEn) o;
 
-        if (idresource != resource.idresource) return false;
-        if (resourceTypeIdresourceType != resource.resourceTypeIdresourceType) return false;
-        if (keycardIdkeycard != resource.keycardIdkeycard) return false;
-        if (userIduser != resource.userIduser) return false;
-        if (name != null ? !name.equals(resource.name) : resource.name != null) return false;
-        if (!Arrays.equals(occupied, resource.occupied)) return false;
-        if (!Arrays.equals(available, resource.available)) return false;
-        if (availabilityStatus != null ? !availabilityStatus.equals(resource.availabilityStatus) : resource.availabilityStatus != null)
+        if (idresource != that.idresource) return false;
+        if (resourceTypeIdresourceType != that.resourceTypeIdresourceType) return false;
+        if (keycardIdkeycard != that.keycardIdkeycard) return false;
+        if (userIduser != that.userIduser) return false;
+        if (name != null ? !name.equals(that.name) : that.name != null) return false;
+        if (!Arrays.equals(occupied, that.occupied)) return false;
+        if (!Arrays.equals(available, that.available)) return false;
+        if (availabilityStatus != null ? !availabilityStatus.equals(that.availabilityStatus) : that.availabilityStatus != null)
             return false;
-        if (availabilityDate != null ? !availabilityDate.equals(resource.availabilityDate) : resource.availabilityDate != null)
+        if (availabilityDate != null ? !availabilityDate.equals(that.availabilityDate) : that.availabilityDate != null)
             return false;
 
         return true;

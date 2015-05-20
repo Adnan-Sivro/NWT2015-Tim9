@@ -3,6 +3,7 @@ package auth;
 /**
  * Created by Adnan on 9.5.2015..
  */
+import auth.entities.AuthParameterRegister;
 import dbclasses.User;
 import facade.EntityFacade;
 

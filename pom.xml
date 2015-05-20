@@ -81,8 +81,20 @@
           <version>4.8.1</version>
           <scope>test</scope>
       </dependency>
+      <dependency>
+          <groupId>javax</groupId>
+          <artifactId>javaee-web-api</artifactId>
+          <version>6.0</version>
+          <scope>provided</scope>
+      </dependency>
+      <dependency>
+          <groupId>org.hibernate</groupId>
+          <artifactId>hibernate-c3p0</artifactId>
+          <version>3.6.3.Final</version>
+      </dependency>
 
-        </dependencies>
+
+  </dependencies>
   <build>
     <finalName>Hotel</finalName>
   </build>

@@ -1,4 +1,4 @@
-package auth;
+package auth.entities;
 
 import java.io.Serializable;
 

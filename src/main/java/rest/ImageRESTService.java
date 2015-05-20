@@ -1,8 +1,6 @@
 package rest;
 
 import dbclasses.Image;
-import dbclasses.ResourceType;
-import dbclasses.User;
 import services.ImageService;
 
 import javax.ws.rs.*;

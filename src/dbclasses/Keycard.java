@@ -1,15 +1,11 @@
-package dbclasses;
-
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
- * Created by Adnan on 20.5.2015..
+ * Created by Adnan on 19.5.2015..
  */
 @Entity
-public class Keycard {
+@Table(name = "keycard", schema = "", catalog = "hotel")
+public class KeycardEn {
     private int idkeycard;
     private String number;
     private String accessIdentifier;
@@ -49,11 +45,11 @@ public class Keycard {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Keycard keycard = (Keycard) o;
+        KeycardEn keycardEn = (KeycardEn) o;
 
-        if (idkeycard != keycard.idkeycard) return false;
-        if (number != null ? !number.equals(keycard.number) : keycard.number != null) return false;
-        if (accessIdentifier != null ? !accessIdentifier.equals(keycard.accessIdentifier) : keycard.accessIdentifier != null)
+        if (idkeycard != keycardEn.idkeycard) return false;
+        if (number != null ? !number.equals(keycardEn.number) : keycardEn.number != null) return false;
+        if (accessIdentifier != null ? !accessIdentifier.equals(keycardEn.accessIdentifier) : keycardEn.accessIdentifier != null)
             return false;
 
         return true;

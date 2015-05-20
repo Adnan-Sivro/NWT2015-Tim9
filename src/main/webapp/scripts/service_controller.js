@@ -26,12 +26,14 @@
                 $scope.status = status;
             });
         };
+
         $scope.login = function () {
             //$http.get("/PMS-NWT/rest/tasks").then(function (response) {
             //    $scope.tasks = response.data;
             //});
 
             $http({
+
                 url: '/Hotel/auth/login',
                 method: "POST",
                 data: {'username': $scope.loginUsername, 'password': $scope.loginPassword},
@@ -49,6 +51,7 @@
         };
 
         $scope.login = function () {
+
             //$http.get("/PMS-NWT/rest/tasks").then(function (response) {
             //    $scope.tasks = response.data;
             //});

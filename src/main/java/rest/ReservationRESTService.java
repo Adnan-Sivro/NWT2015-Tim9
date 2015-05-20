@@ -1,7 +1,6 @@
 package rest;
 
 import dbclasses.Reservation;
-import dbclasses.User;
 import services.ReservationService;
 
 import javax.ws.rs.*;

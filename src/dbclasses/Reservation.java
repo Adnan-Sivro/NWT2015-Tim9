@@ -1,14 +1,13 @@
-package dbclasses;
-
 import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by Adnan on 20.5.2015..
+ * Created by Adnan on 19.5.2015..
  */
 @Entity
-@IdClass(ReservationPK.class)
-public class Reservation {
+@Table(name = "reservation", schema = "", catalog = "hotel")
+@IdClass(ReservationEnPK.class)
+public class ReservationEn {
     private int idreservation;
     private Timestamp fromDate;
     private Timestamp toDate;
@@ -92,7 +91,7 @@ public class Reservation {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Reservation that = (Reservation) o;
+        ReservationEn that = (ReservationEn) o;
 
         if (idreservation != that.idreservation) return false;
         if (Float.compare(that.price, price) != 0) return false;

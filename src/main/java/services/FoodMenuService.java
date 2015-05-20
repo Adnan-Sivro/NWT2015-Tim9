@@ -1,7 +1,7 @@
 package services;
 
-import dbclasses.FoodMenu;
 
+import dbclasses.FoodMenu;
 
 /**
  * Created by Korisnik on 25.3.2015..

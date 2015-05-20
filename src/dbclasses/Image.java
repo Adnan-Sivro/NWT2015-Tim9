@@ -1,13 +1,12 @@
-package dbclasses;
-
 import javax.persistence.*;
 
 /**
- * Created by Adnan on 20.5.2015..
+ * Created by Adnan on 19.5.2015..
  */
 @Entity
-@IdClass(ImagePK.class)
-public class Image {
+@Table(name = "image", schema = "", catalog = "hotel")
+@IdClass(ImageEnPK.class)
+public class ImageEn {
     private int idimage;
     private String name;
     private String location;
@@ -69,13 +68,13 @@ public class Image {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Image image = (Image) o;
+        ImageEn imageEn = (ImageEn) o;
 
-        if (idimage != image.idimage) return false;
-        if (resourceTypeIdresourceType != image.resourceTypeIdresourceType) return false;
-        if (name != null ? !name.equals(image.name) : image.name != null) return false;
-        if (location != null ? !location.equals(image.location) : image.location != null) return false;
-        if (description != null ? !description.equals(image.description) : image.description != null) return false;
+        if (idimage != imageEn.idimage) return false;
+        if (resourceTypeIdresourceType != imageEn.resourceTypeIdresourceType) return false;
+        if (name != null ? !name.equals(imageEn.name) : imageEn.name != null) return false;
+        if (location != null ? !location.equals(imageEn.location) : imageEn.location != null) return false;
+        if (description != null ? !description.equals(imageEn.description) : imageEn.description != null) return false;
 
         return true;
     }

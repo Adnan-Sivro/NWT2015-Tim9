@@ -6,9 +6,9 @@ package rest;
 
 
 
-        import auth.AuthParameter;
-        import auth.AuthResponseObject;
-        import auth.ResponseMessages;
+        import auth.entities.AuthParameter;
+        import auth.entities.AuthResponseObject;
+        import auth.entities.ResponseMessages;
         import dbclasses.User;
         import facade.EntityFacade;
 

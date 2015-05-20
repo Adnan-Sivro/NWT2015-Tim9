@@ -5,7 +5,7 @@ import javax.persistence.Id;
 import java.io.Serializable;
 
 /**
- * Created by Enes on 18.5.2015..
+ * Created by Adnan on 20.5.2015..
  */
 public class ResourcePK implements Serializable {
     private int idresource;
@@ -64,8 +64,8 @@ public class ResourcePK implements Serializable {
         ResourcePK that = (ResourcePK) o;
 
         if (idresource != that.idresource) return false;
-        if (keycardIdkeycard != that.keycardIdkeycard) return false;
         if (resourceTypeIdresourceType != that.resourceTypeIdresourceType) return false;
+        if (keycardIdkeycard != that.keycardIdkeycard) return false;
         if (userIduser != that.userIduser) return false;
 
         return true;

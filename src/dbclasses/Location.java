@@ -1,15 +1,11 @@
-package dbclasses;
-
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
- * Created by Adnan on 20.5.2015..
+ * Created by Adnan on 19.5.2015..
  */
 @Entity
-public class Location {
+@Table(name = "location", schema = "", catalog = "hotel")
+public class LocationEn {
     private int idlocation;
     private String address;
     private float latitude;
@@ -60,12 +56,12 @@ public class Location {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Location location = (Location) o;
+        LocationEn that = (LocationEn) o;
 
-        if (idlocation != location.idlocation) return false;
-        if (Float.compare(location.latitude, latitude) != 0) return false;
-        if (Float.compare(location.longitude, longitude) != 0) return false;
-        if (address != null ? !address.equals(location.address) : location.address != null) return false;
+        if (idlocation != that.idlocation) return false;
+        if (Float.compare(that.latitude, latitude) != 0) return false;
+        if (Float.compare(that.longitude, longitude) != 0) return false;
+        if (address != null ? !address.equals(that.address) : that.address != null) return false;
 
         return true;
     }

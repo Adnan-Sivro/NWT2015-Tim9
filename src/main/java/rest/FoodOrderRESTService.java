@@ -1,8 +1,6 @@
 package rest;
 
-import dbclasses.FoodMenu;
 import dbclasses.FoodOrder;
-import dbclasses.User;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

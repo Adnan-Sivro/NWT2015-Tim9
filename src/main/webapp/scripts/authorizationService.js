@@ -32,6 +32,7 @@ app.service('authService', function ($http, $rootScope, $cookieStore,$location) 
     };
 
     var _login = function (account) {
+
         return _postData('/login', account).success(function (data) {
             var userProfile = {
                 jwt: data.jwt,

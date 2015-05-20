@@ -1,19 +1,12 @@
-package dbclasses;
-
 import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by Adnan on 20.5.2015..
+ * Created by Adnan on 19.5.2015..
  */
 @Entity
-@NamedQueries ({
-        @NamedQuery(name = User.FIND_ALL, query = "SELECT u FROM User u"),
-        @NamedQuery(name = User.FIND_BY_USERNAME, query = "SELECT u FROM User u WHERE u.username = :username")
-})
-public class User {
-    public static final String FIND_ALL = "User.findAll";
-    public static final String FIND_BY_USERNAME = "User.findByUsername";
+@Table(name = "user", schema = "", catalog = "hotel")
+public class UserEn {
     private int iduser;
     private String username;
     private String password;
@@ -119,19 +112,19 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        User user = (User) o;
+        UserEn userEn = (UserEn) o;
 
-        if (iduser != user.iduser) return false;
-        if (userType != user.userType) return false;
-        if (username != null ? !username.equals(user.username) : user.username != null) return false;
-        if (password != null ? !password.equals(user.password) : user.password != null) return false;
-        if (email != null ? !email.equals(user.email) : user.email != null) return false;
-        if (createdDate != null ? !createdDate.equals(user.createdDate) : user.createdDate != null) return false;
-        if (activatedDate != null ? !activatedDate.equals(user.activatedDate) : user.activatedDate != null)
+        if (iduser != userEn.iduser) return false;
+        if (userType != userEn.userType) return false;
+        if (username != null ? !username.equals(userEn.username) : userEn.username != null) return false;
+        if (password != null ? !password.equals(userEn.password) : userEn.password != null) return false;
+        if (email != null ? !email.equals(userEn.email) : userEn.email != null) return false;
+        if (createdDate != null ? !createdDate.equals(userEn.createdDate) : userEn.createdDate != null) return false;
+        if (activatedDate != null ? !activatedDate.equals(userEn.activatedDate) : userEn.activatedDate != null)
             return false;
-        if (deactivatedDate != null ? !deactivatedDate.equals(user.deactivatedDate) : user.deactivatedDate != null)
+        if (deactivatedDate != null ? !deactivatedDate.equals(userEn.deactivatedDate) : userEn.deactivatedDate != null)
             return false;
-        if (confirmationKey != null ? !confirmationKey.equals(user.confirmationKey) : user.confirmationKey != null)
+        if (confirmationKey != null ? !confirmationKey.equals(userEn.confirmationKey) : userEn.confirmationKey != null)
             return false;
 
         return true;

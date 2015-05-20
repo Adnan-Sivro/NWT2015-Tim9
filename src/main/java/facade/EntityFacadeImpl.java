@@ -14,7 +14,7 @@ import javax.persistence.TypedQuery;
 @Stateless
 public class EntityFacadeImpl implements EntityFacade
 {
-    @PersistenceContext (unitName = "NWTPersistenceUnit")
+    @PersistenceContext (name = "NewPersistenceUnit")
 
     private EntityManager em;
 
